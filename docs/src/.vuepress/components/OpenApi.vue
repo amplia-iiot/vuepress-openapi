@@ -1,6 +1,5 @@
 <template>
-  <div class="open-api-container">
-  </div>
+  <div class="open-api-container"></div>
 </template>
 
 <script>
@@ -10,14 +9,14 @@ import 'swagger-ui/dist/swagger-ui.css'
 export default {
   name: "OpenApi",
   mounted () {
-    const spec = this.$page.path.split('/').filter((item) => !!item)
-    import(`../../../../openApiDefinitions/${spec.join('/')}.json`).then(spec => {
+    //coger del config.js baseurl => para que apunte por defecto, sección [Try it now] 
+    const composedNameSpec = this.$page.regularPath.split('/').filter((item)=>!!item).join('-')
+    import(`../../specs/${composedNameSpec}.json`).then(spec => {
       SwaggerUI({
         spec,
         domNode: this.$el
       })
     })
-
   }
 }
 </script>
