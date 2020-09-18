@@ -27,6 +27,7 @@ module.exports = {
    * ref：https://v1.vuepress.vuejs.org/theme/default-theme-config.html
    */
   themeConfig: {
+    baseSwaggerServer:'https://api.example.com/api/v3',
     repo: '',
     editLinks: false,
     docsDir: '',

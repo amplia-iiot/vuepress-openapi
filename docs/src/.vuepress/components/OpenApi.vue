@@ -9,11 +9,11 @@ import 'swagger-ui/dist/swagger-ui.css'
 export default {
   name: "OpenApi",
   mounted () {
-    //coger del config.js baseurl => para que apunte por defecto, sección [Try it now] 
-    const composedNameSpec = this.$page.regularPath.split('/').filter((item)=>!!item).join('-')
+    const {baseSwaggerServer} = this.$themeConfig;
+    const composedNameSpec = this.$page.regularPath.split('/').filter((item) => !!item).join('-')
     import(`../../specs/${composedNameSpec}.json`).then(spec => {
       SwaggerUI({
-        spec,
+        spec:{...spec,servers:[{url:baseSwaggerServer}]},
         domNode: this.$el
       })
     })
