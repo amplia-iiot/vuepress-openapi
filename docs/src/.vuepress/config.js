@@ -27,7 +27,7 @@ module.exports = {
    * ref：https://v1.vuepress.vuejs.org/theme/default-theme-config.html
    */
   themeConfig: {
-    baseSwaggerServer:'https://api.example.com/api/v3',
+    baseSwaggerServer:'http://172.19.18.132:8082',
     repo: '',
     editLinks: false,
     docsDir: '',
@@ -41,6 +41,10 @@ module.exports = {
       {
         text: 'Second sample',
         link: '/secondSample/',
+      },
+      {
+        text: 'OpenGate',
+        link: '/opengate/',
       }
     ]
   },
