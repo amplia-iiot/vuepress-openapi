@@ -1,0 +1,8 @@
+{
+    "openapi": "3.0.2",
+    "info":{
+        "title": "OpenGate North API",
+        "description": "The OpenGate Applications API is a Web REST based Interface that allows integration of external applications to the services provided by the OpenGate platform",
+        "version":"v9.2"
+    }
+}

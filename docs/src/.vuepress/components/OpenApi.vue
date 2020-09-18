@@ -8,16 +8,27 @@ import 'swagger-ui/dist/swagger-ui.css'
 
 export default {
   name: "OpenApi",
-  mounted () {
-    const {baseSwaggerServer} = this.$themeConfig;
-    const composedNameSpec = this.$page.regularPath.split('/').filter((item) => !!item).join('-')
-    import(`../../specs/${composedNameSpec}.json`).then(spec => {
-      SwaggerUI({
-        spec:{...spec,servers:[{url:baseSwaggerServer}]},
-        domNode: this.$el
-      })
-    })
-  }
+  props: {
+    page: {
+      type: Object,
+      required: true
+    }
+  },
+  watch: {
+    page: {
+      immediate: true,
+      handler () {
+        const { baseSwaggerServer } = this.$themeConfig;
+        const composedNameSpec = this.page.regularPath.split('/').filter((item) => !!item).join('-')
+        import(`../../specs/${composedNameSpec}.json`).then(spec => {
+          SwaggerUI({
+            spec: { ...spec, servers: [{ url: baseSwaggerServer }] },
+            domNode: this.$el
+          })
+        })
+      }
+    }
+  },
 }
 </script>
 

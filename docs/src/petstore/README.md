@@ -1,3 +1,9 @@
-<ClientOnly>
-  <open-api></open-api>
-</ClientOnly>
+---
+sidebar: auto
+---
+
+# asi te centras en lo importante
+
+## segundos
+a
+a
