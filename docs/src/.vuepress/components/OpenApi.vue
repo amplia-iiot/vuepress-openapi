@@ -18,11 +18,11 @@ export default {
     page: {
       immediate: true,
       handler () {
-        const { baseSwaggerServer } = this.$themeConfig;
+        const { servers = [] } = this.$themeConfig;
         const composedNameSpec = this.page.regularPath.split('/').filter((item) => !!item).join('-')
         import(`../../specs/${composedNameSpec}.json`).then(spec => {
           SwaggerUI({
-            spec: { ...spec, servers: [{ url: baseSwaggerServer }] },
+            spec: { ...spec, servers: servers.map(url=>({url})) },
             domNode: this.$el
           })
         })
