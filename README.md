@@ -11,6 +11,7 @@ The name will be given by the path where the vuepress page is located.
 The best way to explain it is by examples ( you will find all of them in this project ):
 
 * src/petstore/README.md -> src/spect/petstore.json || src/spect/petstore.yaml 
+* src/petstore/using-vue.md -> src/spect/petstore-using-vue.json || src/spect/petstore-using-vue.yaml 
 * src/secondSample/README.md -> src/spect/secondSample.json || src/spect/secondSample.yaml 
 * src/opengate/README.md -> src/spect/opengate.json || src/spect/opengate.yaml 
 
