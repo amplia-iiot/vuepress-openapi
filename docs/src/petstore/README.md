@@ -1,9 +1,7 @@
----
-sidebar: auto
----
+# Content
 
-# asi te centras en lo importante
+The markdown content will be shown on the top
 
-## segundos
-a
-a
+## Even the subheaders
+
+The openapi specification is shown below

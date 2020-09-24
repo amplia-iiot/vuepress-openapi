@@ -46,7 +46,19 @@ module.exports = {
         text: 'OpenGate',
         link: '/opengate/',
       }
-    ]
+    ],
+    sidebar: {
+      '/petstore/': [
+        {
+          title: 'Petstore',
+          collapsable: false,
+          children: [
+            '',
+            'using-vue',
+          ]
+        }
+      ],
+    }
   },
   configureWebpack:(config)=>{
     config.module.rules.push({
