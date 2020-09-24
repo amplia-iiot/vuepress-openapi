@@ -20,7 +20,7 @@ export default {
       handler () {
         const { servers = [] } = this.$themeConfig;
         const composedNameSpec = this.page.regularPath.split('/').filter((item) => !!item).join('-')
-        import(`../../specs/${composedNameSpec}.json`).then(spec => {
+        import(`../../specs/${composedNameSpec}.${this.yaml?'yaml':'json'}`).then(spec => {
           SwaggerUI({
             spec: { ...spec, servers: servers.map(url=>({url})) },
             domNode: this.$el
@@ -29,6 +29,11 @@ export default {
       }
     }
   },
+  computed:{
+    yaml(){
+      return this.$frontmatter.openapi === 'yaml'
+    }
+  }
 }
 </script>
 

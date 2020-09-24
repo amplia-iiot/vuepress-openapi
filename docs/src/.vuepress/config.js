@@ -27,7 +27,7 @@ module.exports = {
    * ref：https://v1.vuepress.vuejs.org/theme/default-theme-config.html
    */
   themeConfig: {
-    servers:['http://172.19.18.132:8082'],
+    servers: ['http://172.19.18.132:8082'],
     repo: '',
     editLinks: false,
     docsDir: '',
@@ -48,7 +48,12 @@ module.exports = {
       }
     ]
   },
-
+  configureWebpack:(config)=>{
+    config.module.rules.push({
+      test: /\.yaml$/,
+      use: 'js-yaml-loader',
+    })
+  },
   /**
    * Apply plugins，ref：https://v1.vuepress.vuejs.org/zh/plugin/
    */
